@@ -8,7 +8,7 @@
        	</div>
 
        	<div class="table-container">
-       		<table className="border-gray-300 border">
+       		<table className="min-w-full border border-gray-200 bg-stipped">
        			<thead>
        				<tr>
                     	<th>ID</th>
@@ -23,15 +23,16 @@
             			<th>{{ item.id }}</th>
             			<th>{{ item.name }}</th>
             			<th>{{ item.description }}</th>
-            			<th>
-            				
+            			<th v-if="item.image">
             				<img :src="`http://127.0.0.1:8000/uploads/${item.image}`" alt="Product Image" width="50" />
-
+            			</th>
+            			<th v-else="item.image">
+            				<img :src="`http://127.0.0.1:8000/uploads/common.jpg`" alt="Product Image" width="50" />
             			</th>
             			<th>
             				
-                        			<button className="btn edit" title="Edit"><i class="fa fa-edit"></i>Edit</button>
-                        			<button className="btn delete" title="Delete"><i class="fa fa-trash">Delete</i></button>
+                        			<button className="btn edit" title="Edit"><i class="fa fa-edit"></i></button>
+                        			<button className="btn delete" title="Delete"><i class="fa fa-trash"></i></button>
                     			
             			</th>
             		</tr>
